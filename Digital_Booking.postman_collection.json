@@ -1,0 +1,1113 @@
+{
+	"info": {
+		"_postman_id": "c0be82a0-721c-41f2-a8d9-7bca9a156cf6",
+		"name": "Digital_Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16858046"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get Products Paginator",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product/getAll?nameCity=Yucatan",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"getAll"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "sortField",
+									"value": "nameProduct",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "d",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "pageNumber",
+									"value": "0 ",
+									"disabled": true
+								},
+								{
+									"key": "nameCity",
+									"value": "Yucatan"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Random Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product/allRandom",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"allRandom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODY3MTU4NzksImV4cCI6MTY4NjgwMjI3OX0.gCMMPkCvtdWlkfD1L-I8mty8zdRbRvxtfo0xHYfCN78",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nameProduct\": \"Desierto de Atacama2 3121\",\r\n    \"descriptionProduct\":\"Descripcion de prueba\",\r\n    \"price\":123,\r\n    \"turistGuide\":\"Jose Saramago\",\r\n    \"category\":{\r\n        \"idCategory\": 1\r\n    },\r\n    \"ciudad\":{\r\n        \"idCity\": 1\r\n    },\r\n    \"politics\":{\r\n        \"idPolitics\": 11\r\n    },\r\n    \"location\": {\r\n        \"latitude\":1.12,\r\n        \"longitude\":2.22,\r\n        \"urlLocation\":\"urlLocation\"\r\n\r\n    },\r\n    \"duration\":20,\r\n    \"images\":[\r\n        {\r\n        \"nameImage\":\"prueba2s2\",\r\n        \"urlImage\":\"https://images.pexels.com/photos/8639036/pexels-photo-8639036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\"\r\n        },\r\n        {\r\n        \"nameImage\":\"prueb2as3\",\r\n        \"urlImage\":\"https://images.pexels.com/photos/8639036/pexels-photo-8639036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\"\r\n        }\r\n    ]\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product/delete/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODYzNjE2MDksImV4cCI6MTY4NjQ0ODAwOX0.8GpWyi5fG8D2hMDKReMRhrmIz_wdjxEDaCflDYkvNzI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"location\": {\r\n        \"latitude\":1.221,\r\n        \"longitude\":2.331,\r\n        \"urlLocation\":\"urlLocation2\"\r\n\r\n    }\r\n    \r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/update/69",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"update",
+								"69"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODYxOTA0NzAsImV4cCI6MTY4NjI3Njg3MH0.fIWSTOlndpKBPF_TUKwZ5fDnPHUKuEqAMR4BpJd_lsk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/santi/Pictures/imagenprueba.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/s3/upload/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"s3",
+								"upload",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get Categories Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/category/getAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categoriy for ID Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/category/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODY3MTU4NzksImV4cCI6MTY4NjgwMjI3OX0.gCMMPkCvtdWlkfD1L-I8mty8zdRbRvxtfo0xHYfCN78",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \r\n        \"nameCategory\": \"cultural\",\r\n        \"descriptionCategory\": \"El tour de cultura combina una variedad de actividades que permiten a los participantes sumergirse en la historia, las tradiciones y la cultura de la región.\",\r\n        \"image\": \"https://images.pexels.com/photos/8639036/pexels-photo-8639036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/category/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \r\n        \"nameCategory\": \"cultural2\"\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/category/update/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/category/delete/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@db.com\",\r\n  \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							],
+							"query": [
+								{
+									"key": "file",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"saforero88@gmail.com\",\r\n  \"name\": \"Santiago\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/sign-up",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODU0OTY0NDAsImV4cCI6MTY4NTQ5NzY0MH0.AD70os-aEc8UTM2uPjEaGd8yFKL4gv-GtItnBXdzrUo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n  \"enabled\": true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/ad@db.com",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"ad@db.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/userState/admin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"userState",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users/eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODY0MzM2MDMsImV4cCI6MTY4NjUyMDAwM30.Zc_uq4_mx5Dr_mNDpwtnWDHawN5w2Td_2AQ41QH9KMs",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODY0MzM2MDMsImV4cCI6MTY4NjUyMDAwM30.Zc_uq4_mx5Dr_mNDpwtnWDHawN5w2Td_2AQ41QH9KMs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODYzNjcxODAsImV4cCI6MTY4NjQ1MzU4MH0.fGHFv-JDaR7ieO5JDCtg_-PKPP8nzRtIRA72GdOuU-s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users?size=10&page=0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "City",
+			"item": [
+				{
+					"name": "Get City",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/city/getAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"city",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get City for ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODYzNjE2MDksImV4cCI6MTY4NjQ0ODAwOX0.8GpWyi5fG8D2hMDKReMRhrmIz_wdjxEDaCflDYkvNzI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/city/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"city",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create City",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODY2OTYyNzQsImV4cCI6MTY4Njc4MjY3NH0.HKRbOBhl8SS_uwNNdpnYiynGT20nmrktgija6FNVsqw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \r\n        \"nameCity\": \"Bogota3\",\r\n        \"nameCountry\": \"Colombia\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/city/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"city",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update City",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODYzNjE2MDksImV4cCI6MTY4NjQ0ODAwOX0.8GpWyi5fG8D2hMDKReMRhrmIz_wdjxEDaCflDYkvNzI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \r\n        \"nameCategory\": \"cultural2\"\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/city/update/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"city",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete City",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODYzNjE2MDksImV4cCI6MTY4NjQ0ODAwOX0.8GpWyi5fG8D2hMDKReMRhrmIz_wdjxEDaCflDYkvNzI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/city/delete/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"city",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "Get Location",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/location/getAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"location",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Location for ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODYzNjE2MDksImV4cCI6MTY4NjQ0ODAwOX0.8GpWyi5fG8D2hMDKReMRhrmIz_wdjxEDaCflDYkvNzI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/location/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"location",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODYzNjE2MDksImV4cCI6MTY4NjQ0ODAwOX0.8GpWyi5fG8D2hMDKReMRhrmIz_wdjxEDaCflDYkvNzI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \r\n        \"nameCategory\": \"cultural\",\r\n        \"descriptionCategory\": \"El tour de cultura combina una variedad de actividades que permiten a los participantes sumergirse en la historia, las tradiciones y la cultura de la región.\",\r\n        \"image\": \"https://images.pexels.com/photos/8639036/pexels-photo-8639036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/location/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"location",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODYzNjE2MDksImV4cCI6MTY4NjQ0ODAwOX0.8GpWyi5fG8D2hMDKReMRhrmIz_wdjxEDaCflDYkvNzI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \r\n        \"nameCategory\": \"cultural2\"\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/location/update/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"location",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODYzNjE2MDksImV4cCI6MTY4NjQ0ODAwOX0.8GpWyi5fG8D2hMDKReMRhrmIz_wdjxEDaCflDYkvNzI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/location/delete/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"location",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Politics",
+			"item": [
+				{
+					"name": "Get Politics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/politics/getAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"politics",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Politics Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODY3MTQ4ODIsImV4cCI6MTY4NjgwMTI4Mn0.Xsi9KOCkNm4tFiORu4WOgRk4-dWOGvduHe7LGDtaFnQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cancellationPolicy\": \"Política de cancelación...\",\r\n  \"responsibilityPolicy\": \"Política de responsabilidad...\",\r\n  \"refundPolicy\": \"Política de reembolso...\",\r\n  \"changesPolicy\": \"Política de cambios...\",\r\n  \"privacyPolicy\": \"Política de privacidad...\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/politics/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"politics",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Get Politics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/booking/getAll",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"booking",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Politics Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkYi5jb20iLCJpYXQiOjE2ODY3MTQ4ODIsImV4cCI6MTY4NjgwMTI4Mn0.Xsi9KOCkNm4tFiORu4WOgRk4-dWOGvduHe7LGDtaFnQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"initialDate\": \"2023-06-25T04:30:46.210Z\",\r\n  \"finishDate\": \"2023-06-28T04:30:46.210Z\",\r\n  \"product\": {\r\n    \"idProduct\": 3\r\n    },\r\n    \r\n  \"user\": {\r\n   \r\n    \"email\": \"admin@db.com\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/booking/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"booking",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorites",
+			"item": [
+				{
+					"name": "Crear Favorito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWZvcmVybzg4QGdtYWlsLmNvbSIsImlhdCI6MTY4NzQwNTg3NywiZXhwIjoxNjg3NDkyMjc3fQ.hIVjOcC4N0nT1dBOlJct2GVNL1yuyYhHI9Y1d65lYgM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":{\r\n        \"idUser\":32\r\n    },\r\n    \"product\":{\r\n        \"idProduct\":7\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/favorites/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"favorites",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obetener idFavorito por IdUusuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWZvcmVybzg4QGdtYWlsLmNvbSIsImlhdCI6MTY4NzQwNTg3NywiZXhwIjoxNjg3NDkyMjc3fQ.hIVjOcC4N0nT1dBOlJct2GVNL1yuyYhHI9Y1d65lYgM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/favorites/getByUser/32",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"favorites",
+								"getByUser",
+								"32"
+							],
+							"query": [
+								{
+									"key": "idUser",
+									"value": "32",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete favorite /idUser /idProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWZvcmVybzg4QGdtYWlsLmNvbSIsImlhdCI6MTY4NzQwODIwNCwiZXhwIjoxNjg3NDk0NjA0fQ._WnH4Ipo9U1672MnEBNT2ZpYF6SRNFCO8HI6KYoK8ok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/favorites/delete/32/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"favorites",
+								"delete",
+								"32",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
